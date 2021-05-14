@@ -60,12 +60,12 @@ def build_tree(base_layer):
     print(current_level[0].val)
 
 
-merkleize("I love chicken!")
-merkleize("hello world")  
-merkleize("hello")  
-merkleize("Oh joyous day!")  
-merkleize("I write this sitting in the kitchen sink.")  
-merkleize("It was a bright cold day in April, and the clocks were striking thirteen.")
+# merkleize("I love chicken!")
+# merkleize("hello world")  
+# merkleize("hello")  
+# merkleize("Oh joyous day!")  
+# merkleize("I write this sitting in the kitchen sink.")  
+# merkleize("It was a bright cold day in April, and the clocks were striking thirteen.")
 
 
 #######################################
@@ -78,5 +78,24 @@ class Side(Enum):
     RIGHT = 1
 
 
+def _sha2(s):
+  return sha256(s.encode()).hexdigest()
+
 def validate_proof(root, data, proof):
-    pass  # your code here
+
+    # data_hashed = _sha2(data)
+    print(proof[0][1].name)
+    # if proof[0][1] == 1:
+    #     combined_hash = _sha2(data_hashed + proof[0][0])
+
+    # final = _sha2(proof[1][0] + combined_hash)
+
+    # if final == root:
+    #     return True
+    # else:
+    #     return False
+
+
+#
+print(Side.RIGHT.name)
+validate_proof(1,1,1)
